@@ -3,6 +3,8 @@ import Topbar from "./components/Topbar";
 import Movies from "./Movies";
 import Login from "./Login";
 import ShowDatabase from "./ShowDatabase";
+import AddMovie from './AddMovie';
+import EditMovie from "./EditMovie";
 
 function App() {
   return (
@@ -17,6 +19,8 @@ function App() {
         <Route path="/logout" element ={<h1>Logout</h1>}> </Route>
 
         <Route path="/database" element ={<ShowDatabase />}> </Route>
+        <Route path="/add" element ={<AddMovie/>}> </Route>
+        <Route path="/edit/:id" element ={<EditMovie/>}> </Route>
       </Routes>
       
     </div>
