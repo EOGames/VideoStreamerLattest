@@ -10,6 +10,7 @@ import ShowShowDatabase from "./showStuff/ShowShowDatabase";
 import AddShow from "./showStuff/AddShow";
 import EditShow from "./showStuff/EditShow";
 import Home from "./Home";
+import PrivateRoute from './components/PrivateRoute';
 
 function App() {
   return (
@@ -22,16 +23,19 @@ function App() {
         <Route path="/shows" element ={<Movies linkDataToGet = {'http://localhost:5100/getShowsData'}/>}> </Route>
         <Route path="/login" element ={<Login />}> </Route>
 
-        <Route path="/logout" element ={<h1>Logout</h1>}> </Route>
-        <Route path="/moviedatabase" element ={<ShowMovieDatabase />}> </Route>
-        <Route path="/showdatabase" element ={<ShowShowDatabase/>}> </Route>
+        <Route element={<PrivateRoute/>} >
+
+            <Route path="/logout" element ={<h1>Logout</h1>}> </Route>
+            <Route path="/moviedatabase" element ={<ShowMovieDatabase />}> </Route>
+            <Route path="/showdatabase" element ={<ShowShowDatabase/>}> </Route>
 
 
-        <Route path="/addMovie" element ={<AddMovie/>}> </Route>
-        <Route path="/edit/:id" element ={<EditMovie/>}> </Route>
+            <Route path="/addMovie" element ={<AddMovie/>}> </Route>
+            <Route path="/edit/:id" element ={<EditMovie/>}> </Route>
 
-        <Route path="/addShow" element ={<AddShow/>}> </Route>
-        <Route path="/editshow/:id" element ={<EditShow/>}> </Route>
+            <Route path="/addShow" element ={<AddShow/>}> </Route>
+            <Route path="/editshow/:id" element ={<EditShow/>}> </Route>
+        </Route>
       </Routes>
 
       <Bottom />
