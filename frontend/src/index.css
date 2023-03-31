@@ -114,7 +114,7 @@ table
 {
   border: 1px dotted #ccc;
   background-color: #020024;
-  
+  margin-bottom: 5%;
 }
 
 th
@@ -224,4 +224,31 @@ td
   100%{
     border: 4px dotted #0ff802;
   }
+}
+
+.bottom
+{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  height: fit-content;
+  color: white;
+  background-color: #02002478;
+  text-align: center;
+}
+
+.editBtn
+{
+  background-color: skyblue;
+  box-shadow: 2px 2px 5px black;
+  border: 0px;
+  padding: 5px 15px;
+}
+
+.deleteBtn
+{
+  background-color: rgb(235, 138, 135);
+  box-shadow: 2px 2px 5px black;
+  border: 0px;
+  padding: 5px 15px;
 }

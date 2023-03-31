@@ -62,10 +62,10 @@ const ShowMovieDatabase = ()=>
                                 <td>{m.info}</td>
                                 <td>{m.link}</td>
                                 <td>
-                                    <button onClick={()=> Edit(m._id)} type="submit">Edit</button>
+                                    <button className="editBtn" onClick={()=> Edit(m._id)} type="submit">Edit</button>
                                 </td>
                                 <td>
-                                    <button onClick={()=>Delete(m._id)} type="submit">Delete</button>
+                                    <button className="deleteBtn" onClick={()=>Delete(m._id)} type="submit">Delete</button>
                                 </td>
                             </tr>
                         )

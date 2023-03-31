@@ -4,7 +4,7 @@ const Home = ()=>
         <div className="homeInfo">
            <p>
              Welcome To Video Streamer In A New Avatar.
-                Please click anything from Topbar, Please Login for advance operations like edit delete. <br />
+                Please click anything from Topbar, Login for advance operations like edit delete. <br />
                     Thank You for Visiting <br />
                         Developer: Mandeep Singh 
             </p>

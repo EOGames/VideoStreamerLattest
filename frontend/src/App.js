@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import Topbar from "./components/Topbar";
+import Bottom from "./components/Bottom";
 import Movies from "./components/Movies";
 import Login from "./Login";
 import ShowMovieDatabase from "./movieStuff/ShowMovieDatabase";
@@ -32,7 +33,8 @@ function App() {
         <Route path="/addShow" element ={<AddShow/>}> </Route>
         <Route path="/editshow/:id" element ={<EditShow/>}> </Route>
       </Routes>
-      
+
+      <Bottom />
     </div>
   );
 }

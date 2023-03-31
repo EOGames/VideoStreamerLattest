@@ -1,8 +1,11 @@
 const Bottom = ()=>
 {
     return(
-        <div>
-            Its Bottom
+        <div className="bottom">
+           &#169; 2023-24 
+           <br />
+           Mandeep Singh (All Rights Reserved)
         </div>
     );
 }
+export default Bottom;
