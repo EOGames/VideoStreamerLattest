@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-const ShowDatabase = ()=>
+const ShowMovieDatabase = ()=>
 {
     const [movies,SetMovies] = useState([]);
     const navigate = useNavigate();
@@ -34,7 +35,11 @@ const ShowDatabase = ()=>
     }
 
     return (
-        <div>
+        
+            <>
+                <Link to={'/addMovie'} className="addNewBtn" type="submit">Add New</Link>
+        <div className="tableHolder">
+
             <table>
                 <thead>
                     <tr>
@@ -68,6 +73,8 @@ const ShowDatabase = ()=>
                 </tbody>
             </table>
         </div>
+        </>
+
     );
 }
-export default ShowDatabase; 
+export default ShowMovieDatabase; 

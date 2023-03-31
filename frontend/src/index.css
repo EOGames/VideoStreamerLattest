@@ -167,3 +167,26 @@ td
   display: flex;
   justify-content: center;
 }
+
+.tableHolder
+{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.addNewBtn
+{
+  height: 5vh;
+  width: 10vw;
+  position: fixed;
+  color: rgb(255, 254, 254);
+  font-weight: 900;
+  text-shadow: 1px 1px 5px black;
+  background-color: #0200243b;
+  border: 1px dashed skyblue;
+  bottom:50%;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px; 
+}
