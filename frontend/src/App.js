@@ -1,10 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import Topbar from "./components/Topbar";
-import Movies from "./Movies";
+import Movies from "./movieStuff/Movies";
 import Login from "./Login";
-import ShowMovieDatabase from "./ShowMovieDatabase";
-import AddMovie from './AddMovie';
-import EditMovie from "./EditMovie";
+import ShowMovieDatabase from "./movieStuff/ShowMovieDatabase";
+import AddMovie from './movieStuff/AddMovie';
+import EditMovie from "./movieStuff/EditMovie";
 
 function App() {
   return (
@@ -18,7 +18,7 @@ function App() {
         <Route path="/login" element ={<Login />}> </Route>
 
         <Route path="/logout" element ={<h1>Logout</h1>}> </Route>
-        <Route path="/database" element ={<ShowMovieDatabase />}> </Route>
+        <Route path="/moviedatabase" element ={<ShowMovieDatabase />}> </Route>
         <Route path="/addMovie" element ={<AddMovie/>}> </Route>
         <Route path="/edit/:id" element ={<EditMovie/>}> </Route>
       </Routes>

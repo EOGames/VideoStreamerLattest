@@ -24,7 +24,7 @@ const AddMovie = ()=>
                     }
             });
         console.log(data);
-        navigate('/database');
+        navigate('/moviedatabase');
    }
 
     return(

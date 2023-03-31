@@ -1,13 +1,16 @@
 const express = require('express');
 const cors = require('cors');
 const movie = require('./movies');
+const shows = require('./shows');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
 
-//Movies
+//------------------------------Movies-------------------------
+
+//#region 
 app.get('/getMoviedata', async(req,res)=>
 {
     let data = await movie.find();
@@ -48,6 +51,56 @@ app.delete('/deleteMovie/:_id',async (req,res)=>
     console.log(data);
     res.send(data);
 });
+
+//------------------------------Movies-------------------------
+//#endregion
+
+
+//------------------------------Shows-------------------------
+//#region 
+app.get('/getShowsData', async(req,res)=>
+{
+    let data = await shows.find();
+    res.send(data);
+});
+
+app.post('/addShow',async (req,res) =>
+{
+    let show = new shows(req.body);
+    let data = await show.save();
+    console.log(data);
+
+    res.send(data);
+});
+
+app.get('/findShowById/:_id', async(req,res)=>
+{
+    let data = await shows.findById(req.params._id);
+    // console.log(req.params);
+    res.send(data);
+});
+
+app.put ('/updateShow/:_id', async(req,res)=>
+{
+    let data = await shows.updateOne(
+        req.params,
+        {
+            $set: req.body
+        }
+    );
+    console.log(data);
+    res.send(data);
+});
+
+app.delete('/deleteShow/:_id',async (req,res)=>
+{
+    let data = await shows.deleteOne(req.params);
+    console.log(data);
+    res.send(data);
+});
+
+//------------------------------Shows-------------------------
+//#endregion
 
 app.post('/login',(req,res)=>
 {

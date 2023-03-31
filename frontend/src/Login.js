@@ -13,7 +13,7 @@ const Login = ()=>
      {
         if (auth)
         {
-            navigate('/database');
+            navigate('/');
         }
      });
     async function CollectData ()
@@ -30,7 +30,7 @@ const Login = ()=>
         {
             localStorage.setItem('admin',JSON.stringify(result));
             // alert('Welcome Admin');
-            window.location.href = '/database';
+            window.location.href = '/';
             //navigate('/database');
         }else
         {

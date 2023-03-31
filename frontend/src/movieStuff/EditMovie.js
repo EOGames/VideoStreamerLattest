@@ -39,7 +39,7 @@ const EditMovie = ()=>
                     }
             );
         console.log(data);
-        navigate('/database');
+        navigate('/moviedatabase');
    }
 
     return(
