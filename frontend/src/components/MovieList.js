@@ -1,34 +1,46 @@
 import React, { useEffect, useState } from "react";
 import axio from 'axios';
 import Card from './Cards';
+import Searchbox from './Serchbox';
 
-const MovieList = ()=>
-{
-    
-    const [data,SetMovieData] = useState([]);
+const MovieList = (props) => {
 
-   async function GetData ()
+    let [data, SetMovieData] = useState([]);
+    const [seachfield,SetSearch] = useState('');
+
+   function OnSearchChange(event) 
     {
-        let movies = await axio.get('http://localhost:5100/getMoviedata');
+        SetSearch(event.target.value);
+      //  console.log(event.target.value)
+    };
+
+    async function GetData() {
+        let movies = await axio.get(props.linkDataToGet);
         movies = movies.data;
-       // console.log(movies);
+        // console.log(movies);
         SetMovieData(movies);
     }
 
-    useEffect(()=>
-    {
+    useEffect(() => {
         GetData();
     });
-    
-    return(
-        <div className= 'videoHolder'>
-            {
-                data.map((vid,index)=>
-                
-                    <Card key ={'movie'+index} cla ={'video'} pic ={vid.pic} vlink ={vid.link} info ={vid.info}/>
-                )
-            }
-        </div>
+
+    data = data.filter(vid =>
+        {
+            return vid.name.toLowerCase().includes(seachfield.toLowerCase());
+        });
+    return (
+        <>
+            <Searchbox OnSearchChange = {OnSearchChange} />
+            <div className='videoHolder'>
+                {
+                    data.map((vid, index) =>
+
+                        <Card key={'movie' + index} cla={'video'} pic={vid.pic} vlink={vid.link} info={vid.info} />
+                    )
+                }
+            </div>
+        </>
     );
 }
 export default MovieList;

@@ -1,10 +1,10 @@
 import MovieList from './components/MovieList';
 
-const Movies = ()=>
+const Movies = (props)=>
 {
     return (
         <>
-            <MovieList />
+            <MovieList linkDataToGet = {props.linkDataToGet} />
         </>
     );
 }
