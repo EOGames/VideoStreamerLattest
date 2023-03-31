@@ -190,3 +190,38 @@ td
   text-decoration: none;
   padding: 10px; 
 }
+
+.homeInfo
+{
+    display: flex;
+    color: wheat;
+    justify-content: center;
+    margin-top: 10%;
+    text-shadow: 1px 1px 5px black;
+    text-align: center;
+  }
+  
+  .homeInfo p{
+    border: 4px dotted #ccc;
+    padding: 10px;
+    font-size: 1.2em;
+    animation: animateBorder 2s infinite;
+    background-color: #00030330;
+}
+
+@keyframes animateBorder
+{
+  25%{
+    border: 4px dotted #ff0707;
+  }
+  50%{
+    border: 4px dotted #fdfdfd;
+  }
+
+  75%{
+    border: 4px dotted #ffb007;
+  }
+  100%{
+    border: 4px dotted #0ff802;
+  }
+}

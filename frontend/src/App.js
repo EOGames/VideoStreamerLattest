@@ -8,6 +8,7 @@ import EditMovie from "./movieStuff/EditMovie";
 import ShowShowDatabase from "./showStuff/ShowShowDatabase";
 import AddShow from "./showStuff/AddShow";
 import EditShow from "./showStuff/EditShow";
+import Home from "./Home";
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
       <Topbar/>
 
       <Routes>
-        <Route path="/" element ={<h1> Home</h1>}> </Route>
+        <Route path="/" element ={<Home/>}> </Route>
         <Route path="/movies" element ={<Movies linkDataToGet = {'http://localhost:5100/getMoviedata'}/>}> </Route>
         <Route path="/shows" element ={<Movies linkDataToGet = {'http://localhost:5100/getShowsData'}/>}> </Route>
         <Route path="/login" element ={<Login />}> </Route>
