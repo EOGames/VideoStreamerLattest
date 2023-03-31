@@ -23,6 +23,7 @@ const Topbar = () => {
                     auth ?
                         <>
                             <li><Link to={'/moviedatabase'}>Movie Database</Link></li>
+                            <li><Link to={'/showdatabase'}>Show Database</Link></li>
                             <li><Link onClick={LogOut} to={'/'}>Logout</Link></li>
                         </>
                         :
