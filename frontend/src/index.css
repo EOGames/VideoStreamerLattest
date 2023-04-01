@@ -135,13 +135,15 @@ td
 
 .addmenuHolder
 {
-    margin-top: 10%;
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    flex-direction: column;
-    align-content: center;
-    align-items: center;
+  margin-top: 10%;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-content: center;
+  color: wheat;
+  text-shadow: 1px 1px 4px black;
+  justify-content: center;
 }
 
 .addMenu
@@ -251,4 +253,19 @@ td
   box-shadow: 2px 2px 5px black;
   border: 0px;
   padding: 5px 15px;
+}
+
+.upload
+{
+  padding: 20px 0px;
+  color: #ff0707;
+  font-weight: 900;
+  text-shadow: 1px 1px 5px black;
+}
+
+.picPreview
+{
+  width: 25%;
+  position: fixed;
+  right: 0;
 }

@@ -58,7 +58,7 @@ const ShowMovieDatabase = ()=>
                             <tr key={'movie_'+index}>
                                 <td>{index}</td>
                                 <td>{m.name}</td>
-                                <td>{m.pic}</td>
+                                <td>{DecodeImageLink(m.pic)}</td>
                                 <td>{m.info}</td>
                                 <td>{m.link}</td>
                                 <td>
@@ -78,3 +78,20 @@ const ShowMovieDatabase = ()=>
     );
 }
 export default ShowMovieDatabase; 
+
+ function DecodeImageLink(link)
+{
+    var url;
+
+    let http = new XMLHttpRequest();
+    http.onload = ()=>
+    {
+        //convert blob to url and download
+          url =  window.URL.createObjectURL(http.response);
+    }
+        
+        http.responseType = 'blob';
+        http.open('GET',link,true);
+        
+        return url;
+}

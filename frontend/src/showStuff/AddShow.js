@@ -10,6 +10,19 @@ const AddShow = ()=>
    const [link,SetLink] = useState('');
     const navigate = useNavigate();
 
+    function ConvertImageToBase64(e)
+    {
+        console.log(e);
+        
+        let reader = new FileReader();
+
+        reader.readAsDataURL (e);
+        reader.onloadend = ()=>
+        {
+            console.log(reader.result);
+            SetPic(reader.result);
+        }
+    }
     async function AddData()
    {
         let data = await axios(
@@ -29,6 +42,9 @@ const AddShow = ()=>
 
     return(
         <div className="addmenuHolder">
+             Add Image URL or Upload Directly 
+            <img className="picPreview" src={pic} alt="Pic Preview Here" />
+            <input className="upload"  type="file" name="" id="" onChange={(e)=> ConvertImageToBase64(e.target.files[0])}  />
             <input type="text" value={name} onChange = {(e)=> SetName(e.target.value)} className="addMenu" placeholder="Add ShowName" />
             <input type="text" value={pic} onChange ={(e)=> SetPic(e.target.value)} className="addMenu" placeholder="Picture Link" />
             <input type="text" value={info} onChange ={(e)=> SetInfo(e.target.value)} className="addMenu" placeholder="Information" />
