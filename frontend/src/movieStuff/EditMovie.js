@@ -58,7 +58,7 @@ const EditMovie = ()=>
 
     return(
         <div className="addmenuHolder">
-            Add Image URL or Upload Directly 
+             Add Image URL or Upload Directly 
              <img className="picPreview" src={pic} alt="Pic Preview Here" />
              <input className="upload"  type="file" name="" id="" onChange={(e)=> ConvertImageToBase64(e.target.files[0])}  />
            
